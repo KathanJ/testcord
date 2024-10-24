@@ -1,0 +1,8 @@
+fastapi[all]
+pymongo
+pandas
+python-dotenv
+transformers
+scikit-learn
+torch
+gensim
