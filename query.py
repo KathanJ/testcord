@@ -105,7 +105,7 @@ async def search(
             "output": 1,  # Include the output field
             "rating": 1,
             "categories": 1,
-            "price": 1,
+            "mrp": 1,
             "_id": 0      # Exclude the default _id field
         }
     })
