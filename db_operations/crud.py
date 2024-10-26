@@ -107,9 +107,11 @@ async def upload_new_data(data: dict = Body(...)):
     
         print("Connecting to MongoDB...")
         conn = MongoClient(ATLAS_URI)
+        database = conn.get_database("ml-model-datasource-watchcord")
+        collection = database.get_collection("products-data")
 
         if filtered_data_list:
-            conn.db.products.insert_many(filtered_data_list)
+            collection.insert_many(filtered_data_list)
             return {"status": "Data uploaded successfully"}
         else:
             return {"status": "No valid data to upload"}
